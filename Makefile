@@ -6,7 +6,7 @@
 #    By: mwilk <mwilk@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/11/09 16:17:56 by mwilk             #+#    #+#              #
-#    Updated: 2015/12/12 17:08:32 by mwilk            ###   ########.fr        #
+#    Updated: 2015/12/12 17:34:29 by mwilk            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,18 +29,18 @@ FEE_H = -I ./
 LIB_H = -I Libft/includes/
 LIB_L = -LLibft -lft
 
-all: makelib normal
+all: ml normal
 
-makelib:
+ml:
 		@make -C Libft
 
-makerelib:
+mrl:
 		@make -C libft re
 
-cleanlib:
+mcl:
 		@make -C libft clean
 
-fcleanlib:
+mfl:
 		@make -C libft fclean
 
 normal: clean $(NAME)
@@ -50,7 +50,7 @@ $(NAME):
 	@mkdir $(OBJ_PATH)
 	@gcc -o $(NAME) $(OBJ) $(LIB_L)
 	@mv $(OBJ) $(OBJ_PATH)
-	@echo "\033[35m <(O.O<) WOW ! Very Name ! Amaze ! (>^o^)> \033[0m"
+	@echo "\033[35m <(O.O<) WOW ! Very unnamed ! Amaze ! (>^o^)> \033[0m"
 
 clean:
 	@/bin/rm -rf $(OBJ_PATH)
@@ -62,5 +62,5 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all normal clean fclean re makelib makerelib cleanlib fcleanlib
+.PHONY: all normal clean fclean re ml mrl mcl mfl
 
